@@ -1,7 +1,16 @@
 import React from 'react'
 import { View,  StyleSheet ,Image ,Text , TouchableOpacity} from 'react-native'
+import LoginScreen from '../Screens/LoginScreen'
 
-export default function UserProfileCard(props) {
+
+
+
+
+// Login Page
+
+
+
+export default function UserProfileCard(props ) {
     return (
 
         // ## When the user is not Signed in 
@@ -18,7 +27,11 @@ export default function UserProfileCard(props) {
                 <Text style={{marginTop:"5%" , marginLeft:"5%",fontSize:20}}>User Dashboard</Text>
                 <Text style={{marginTop:"5%" , marginLeft:"5%" , width: 200}}>Get track of your content , messages and forum and stay tuned </Text>
                 
-                <TouchableOpacity style = {{marginLeft:10, marginTop : 15,backgroundColor :'#694fad', width:180, height:30}}>
+                <TouchableOpacity 
+                style = {{marginLeft:10, marginTop : 15,backgroundColor :'#694fad', width:180, height:30}}
+                onPress={() =>props.navigation.navigate("Login")}  
+                >
+                
                     <Text style={{paddingTop : 6, paddingLeft : 30 , color:"white" }}>
                         Sign In 
                     </Text>

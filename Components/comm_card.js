@@ -26,7 +26,10 @@ export default function comm_card(props) {
                 {/* Content  */}
                 <Text style= {{marginStart:10,marginTop:14 , maxWidth: "70%",fontSize:12 }}>{props.Content}</Text>
                 {/* Button */}
-                <TouchableOpacity style = {{marginTop:"5%" , marginStart:50 ,marginRight:"30%" }}>
+                <TouchableOpacity 
+                style = {{marginTop:"5%" , marginStart:50 ,marginRight:"30%" }}
+                onPress={() =>props.navigation.navigate(props.onPressuri)} 
+                >
                     <Text style={{backgroundColor:props.headingColor,height:35,paddingLeft:50,paddingTop:7,borderRadius:20}}>
                         Get Started
                     </Text>
