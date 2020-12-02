@@ -23,7 +23,7 @@ export default function App() {
     return (
       
       <Stack.Navigator initialRouteName="UserProfileScreen">
-        <Stack.Screen name="UserProfileScreen" component={UserProfileScreen} />
+        <Stack.Screen name="UserProfile" component={UserProfileScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
 
