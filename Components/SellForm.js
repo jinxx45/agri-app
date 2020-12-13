@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text,TextInput,StyleSheet } from 'react-native'
-import PhotoUpload from 'react-native-photo-upload'
+
 
 export default function SellForm() {
     return (
@@ -28,8 +28,7 @@ export default function SellForm() {
 
             <Text>PRODUCT IMAGES</Text>
 
-            <PhotoUpload
- ></PhotoUpload>
+
 
 
 
