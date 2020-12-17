@@ -1,33 +1,10 @@
 import React from 'react'
-import { View, Text , Image } from 'react-native'
-import Onboarding from 'react-native-onboarding-swiper';
+import { View, Text } from 'react-native'
 
-export default function OnboardingScreen({navigation}) {
+export default function HandicraftScreen() {
     return (
-        <Onboarding
-        onSkip ={()=>navigation.navigate("Home") }
-        onDone ={()=>navigation.navigate("Home") }
-        pages={[
-          {
-            backgroundColor: '#fff',
-            image: <Image source={require("../Images/favicon.png")} />,
-            title: 'Onboarding',
-            subtitle: 'Done with React Native Onboarding Swiper',
-          },
-          {
-            backgroundColor: '#fff',
-            image: <Image source={require('../Images/favicon.png')} />,
-            title: 'Onboarding',
-            subtitle: 'Done with React Native Onboarding Swiper',
-          },
-          {
-            backgroundColor: '#fff',
-            image: <Image source={require('../Images/favicon.png')} />,
-            title: 'Onboarding',
-            subtitle: 'Done with React Native Onboarding Swiper',
-          },
-        
-        ]}
-      />
+        <View>
+            <Text>HandiCraft Screen</Text>
+        </View>
     )
 }
