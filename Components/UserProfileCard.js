@@ -2,6 +2,8 @@ import React from 'react'
 import { View,  StyleSheet ,Image ,Text , TouchableOpacity} from 'react-native'
 import LoginScreen from '../Screens/LoginScreen'
 
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
 
 
 
@@ -24,15 +26,15 @@ export default function UserProfileCard(props ) {
         resizeMode ="center"
       />    
             <View style={{flexDirection:"column"}}>
-                <Text style={{marginTop:"5%" , marginLeft:"5%",fontSize:20}}>User Dashboard</Text>
-                <Text style={{marginTop:"5%" , marginLeft:"5%" , width: 200}}>Get track of your content , messages and forum and stay tuned </Text>
+                <Text style={{marginTop:"5%" , marginLeft:"5%",fontSize:25*vh}}>User Dashboard</Text>
+                <Text style={{marginTop:"5%" , marginLeft:"5%" , width: 650*vw}}>Get track of your content , messages and forum and stay tuned </Text>
                 
                 <TouchableOpacity 
-                style = {{marginLeft:10, marginTop : 15,backgroundColor :'#694fad', width:180, height:30}}
+                style = {{marginLeft:"3%", marginTop : "10%",backgroundColor :'#694fad', width:650*vw, height:40*vh}}
                 onPress={() =>props.navigation.navigate("Login")}  
                 >
                 
-                    <Text style={{paddingTop : 6, paddingLeft : 30 , color:"white" }}>
+                    <Text style={{paddingTop : "3%", fontSize:20*vh, color:"white",alignSelf:"center" }}>
                         Sign In 
                     </Text>
                 </TouchableOpacity>
@@ -46,10 +48,10 @@ export default function UserProfileCard(props ) {
 const styles = StyleSheet.create({
     userCard : {
         
-            height : 180,
+            height : 225*vh,
             width : "97%",
             backgroundColor:"#B0D8FF",
-            marginTop: "10%",
+            marginTop: "5%",
             borderColor:"grey",
             borderWidth: 0.8,
             elevation:10,

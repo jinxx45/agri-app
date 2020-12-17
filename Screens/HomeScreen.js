@@ -9,7 +9,7 @@ export default function HomeScreen() {
             {/* Header with App Name*/}
             <View style={{backgroundColor:"#694fad",flexDirection:"row" ,justifyContent:"center",height:80,alignItems:"flex-end",paddingBottom:16}}>
                 <Entypo style={{paddingBottom:1}} name="paper-plane" size={24} color="yellow" />
-                <Text style={{marginLeft:10, color:"white",fontSize:25}}>App Name</Text>
+                <Text style={{marginLeft:10, color:"white",fontSize:25}}>Atmanirbhar Kisaan</Text>
             </View>
 
             {/* Posts in the Database */}

@@ -4,6 +4,10 @@ import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
+
+
 export default function ShareApp() {
     return (
         <View style={styles.card}>
@@ -16,10 +20,10 @@ export default function ShareApp() {
 
             {/* Content */}
             
-            <View style={{borderColor:"black", borderLeftWidth:0.8, marginLeft:5}}>
-                <Text style={{width:190 , fontSize:18,marginStart : 12}}>Share this App with your friends !  </Text>
+            <View style={{borderColor:"black", borderLeftWidth:0.8, marginLeft:"2%"}}>
+                <Text style={{width:650*vw , fontSize:25*vh,marginStart : "5%"}}>Share this App with your friends !  </Text>
                 
-                <View style={{flexDirection:"row", justifyContent:"space-around" , marginTop:40}}>
+                <View style={{flexDirection:"row", justifyContent:"space-around" , marginTop:"10%"}}>
                     <Entypo name="facebook-with-circle" size={40} color="#694fad" />
                     <Ionicons name="logo-whatsapp" size={40} color="#694fad" />
                     <Entypo name="instagram-with-circle" size={40}color="#694fad" />
@@ -33,10 +37,10 @@ export default function ShareApp() {
 }
 const styles = StyleSheet.create({
     card : {
-        height : "40%",
+        height : 225*vh,
         width : "97%",
         backgroundColor:"#B0D8FF",
-        marginTop: "2%",
+        marginTop: "6%",
         borderColor:"grey",
         borderWidth: 0.7,
         elevation:10,
