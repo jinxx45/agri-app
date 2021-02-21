@@ -3,6 +3,11 @@ import { Image} from 'react-native'
 import Onboarding from 'react-native-onboarding-swiper';
 import { color } from 'react-native-reanimated';
 
+// Importing Fonts
+import { useFonts } from 'expo-font';
+
+
+
 
 
 import {createViewPortConfig} from 'react-native-responsive-view-port';
@@ -11,13 +16,27 @@ const { vw, vh } = createViewPortConfig();
 
 
 export default function HandicraftScreen({navigation}) {
+    // Loading the Font
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf")
+    });
+
+    if (!loaded) {
+        return null;
+      }
+    
     return (
+        
         <Onboarding
       onSkip ={()=>navigation.navigate("Home") }
       onDone ={()=>navigation.navigate("Home") }
       bottomBarColor ={"#0ff7d0"}
       transitionAnimationDuration={20}
-      titleStyles ={{fontSize:40*vh,marginTop:-40*vh,color:"#d40000"}}
+      titleStyles ={{fontSize:40*vh,marginTop:-40*vh,color:"#d40000",fontFamily:"Bebas"}}
+      subTitleStyles ={{fontFamily:"MS",fontSize:20*vh}}
       pages={[
         {
           backgroundColor: '#ffffff',

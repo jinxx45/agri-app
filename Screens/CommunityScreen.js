@@ -7,6 +7,9 @@ import HandicraftScreen from './HandicraftScreen';
 import StudentScreen from './StudentScreen';
 import AgriFormScreen from './AgriFormScreen';
 
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
+
 const Stack = createStackNavigator();
 
  function CommunityScreen({navigation}) {
@@ -17,7 +20,7 @@ const Stack = createStackNavigator();
             navigation={navigation}
             Heading = "Agricultural Helpline" 
             Content = "Get a Helpline to sell the products ,get the idea about prices of crops,sell your by products at a good rate and so on"
-            imageUri = 'https://lh4.googleusercontent.com/Avb2JWphhQkO6qtmgwDmzAxP8bzCIkmCPOXCZ25m2p7ISX82ij-ADdkEvHrDLfv8qHXFrXZdwwE7g2i5_kTn=w1919-h903'
+            imageUri = '../Images/CommunityImages/Farmer Vector.png'
             headingColor ="#17d1a6"
             onPressuri="Agriculture"
             />

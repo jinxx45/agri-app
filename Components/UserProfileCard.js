@@ -5,14 +5,24 @@ import LoginScreen from '../Screens/LoginScreen'
 import {createViewPortConfig} from 'react-native-responsive-view-port';
 const { vw, vh } = createViewPortConfig();
 
-
-
+import { useFonts } from 'expo-font';
 
 // Login Page
 
-
-
 export default function UserProfileCard(props ) {
+
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf")
+    });
+
+    if (!loaded) {
+        return null;
+      }
+    
+
     return (
 
         // ## When the user is not Signed in 
@@ -20,21 +30,19 @@ export default function UserProfileCard(props ) {
         <View style={styles.userCard}>
             <Image
         style={styles.usercardImage}
-        source={{
-          uri: 'https://lh4.googleusercontent.com/wXgo1bCfm9IdpgjY79ZxQuwcejJM7tQyDca80cFre8_29q8Faiy8s04-4NWF31Lm_0VtemoQGYG5d3enRY_2=w1919-h903',
-        }}
+        source={{uri:"https://i.dlpng.com/static/png/5327106-businessman-icon-png-263229-free-icons-library-businessman-icon-png-512_512_preview.png"}}
         resizeMode ="center"
       />    
             <View style={{flexDirection:"column"}}>
-                <Text style={{marginTop:"5%" , marginLeft:"5%",fontSize:25*vh}}>User Dashboard</Text>
-                <Text style={{marginTop:"5%" , marginLeft:"5%" , width: 650*vw}}>Get track of your content , messages and forum and stay tuned </Text>
+                <Text style={{marginTop:"5%" , marginLeft:"5%",fontSize:25*vh,fontFamily:"Bebas"}}>User Dashboard</Text>
+                <Text style={{marginTop:"5%" , marginLeft:"5%" , width: 650*vw,fontFamily:"MS",fontSize:15*vh}}>Get track of your content , messages and forum and stay tuned </Text>
                 
                 <TouchableOpacity 
                 style = {{marginLeft:"3%", marginTop : "10%",backgroundColor :'#694fad', width:650*vw, height:40*vh}}
                 onPress={() =>props.navigation.navigate("Login")}  
                 >
                 
-                    <Text style={{paddingTop : "3%", fontSize:20*vh, color:"white",alignSelf:"center" }}>
+                    <Text style={{paddingTop : 10*vh, fontSize:20*vh, color:"white",alignSelf:"center",fontFamily:"Bebas" }}>
                         Sign In 
                     </Text>
                 </TouchableOpacity>
@@ -68,9 +76,7 @@ const styles = StyleSheet.create({
             height: "85%",
             width : "35%",
             margin:10,
-            borderRadius : 10,
-            borderColor:"black",
-            borderWidth:4
+            
         }
     
 })

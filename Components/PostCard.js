@@ -2,25 +2,42 @@ import React from 'react'
 import { View, Text ,StyleSheet,Image } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 
+import { useFonts } from 'expo-font';
+
 
 import {createViewPortConfig} from 'react-native-responsive-view-port';
 const { vw, vh } = createViewPortConfig();
 
 
 export default function PostCard() {
+    
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf"),
+        Ham : require("../assets/fonts/Hamburge-Free.ttf")
+    });
+
+    
+    if (!loaded) {
+        return null;
+      }
+
+
     return (
         <View style={styles.PostCard} >
 
             {/* User Details */}
             <View style={{flexDirection:"row", padding:"3%" ,borderBottomWidth:1,backgroundColor:"#ebeced"}}>
                 <AntDesign style={{paddingTop:"0.5%"}} name="heart" size={16} color="red" />
-                <Text style={{paddingLeft:"2%",fontSize:20*vh}}>Username </Text>
+                <Text style={{paddingLeft:"2%",fontSize:12*vh,fontFamily:"Ham"}}>Username </Text>
             </View>
 
             {/* Post Caption */}
 
             <View style={{padding:"3%"}}>
-                <Text style={{fontSize:18*vh,width:1180*vw}}>Post Caption text : It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Text>
+                <Text style={{fontSize:12*vh,width:1180*vw,fontFamily:"MS"}}>Post Caption text : It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
             </View>
 
             {/* Post Image */}

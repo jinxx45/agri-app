@@ -3,25 +3,38 @@ import { View, Text , StyleSheet ,Image} from 'react-native'
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
+import { useFonts } from 'expo-font';
+
 
 import {createViewPortConfig} from 'react-native-responsive-view-port';
 const { vw, vh } = createViewPortConfig();
 
 
 export default function ShareApp() {
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf")
+    });
+
+    if (!loaded) {
+        return null;
+      }
+    
     return (
         <View style={styles.card}>
 
             <Image 
             resizeMode ="cover"
             style = {styles.cardImage}
-            source = {{uri : "https://lh3.googleusercontent.com/VErToK3T5_sVC9W30hJU-7D4_xZHDHDnSM9Xs4Cm9VeidKoyhoZ73Vrx3eI7EvMhGFtW3Ec5oC0O2aw-TpvR=w874-h903-rw"}}
+            source = {{uri : "https://freepngimg.com/thumb/web_design/51028-5-share-image-hd-image-free-png.png"}}
             />
 
             {/* Content */}
             
             <View style={{borderColor:"black", borderLeftWidth:0.8, marginLeft:"2%"}}>
-                <Text style={{width:650*vw , fontSize:25*vh,marginStart : "5%"}}>Share this App with your friends !  </Text>
+                <Text style={{width:650*vw , fontSize:25*vh,marginStart : "5%",fontFamily:"Bebas"}}>Share this App with your friends  </Text>
                 
                 <View style={{flexDirection:"row", justifyContent:"space-around" , marginTop:"10%"}}>
                     <Entypo name="facebook-with-circle" size={40} color="#694fad" />
@@ -54,9 +67,10 @@ const styles = StyleSheet.create({
     
     cardImage : {
         
-        height: "85%",
-        width : "35%",
+        height: "94%",
+        width : "40%",
         margin:4,
+        resizeMode:'contain'
         
         
     }
