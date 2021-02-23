@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, ViewComponent } from 'react-native'
+import {  View } from 'react-native'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import AgriCard from "../Components/agroCard"
