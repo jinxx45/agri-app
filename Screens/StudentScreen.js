@@ -10,6 +10,7 @@ import {createViewPortConfig} from 'react-native-responsive-view-port';
 const { vw, vh } = createViewPortConfig();
 
 import { useFonts } from 'expo-font';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function StudentScreen() {
@@ -27,7 +28,7 @@ export default function StudentScreen() {
 
     return (
         <View style={{flex:1}}>
-            <View style ={{backgroundColor:"#FEEECE" , flex : 0.6 ,justifyContent:"space-evenly", alignItems:"center",flexDirection:"column",margin:4, elevation:10,marginTop:6*vh,
+            <View  style ={{backgroundColor:"#FEEECE" , flex : 0.6 ,justifyContent:"space-evenly", alignItems:"center",flexDirection:"column",margin:4, elevation:10,marginTop:6*vh,
         shadowColor: '#000',
         shadowOffset: { width: 10, height: 5 },
         shadowOpacity: 2,
@@ -41,6 +42,9 @@ export default function StudentScreen() {
                
                 <Text style={{fontFamily:"Bebas",color:"green",fontSize:40*vh,marginTop:-20*vh}}>Plant-O-Mania</Text>
                 <Text style={{fontFamily:"Bebas",color:"red",fontSize:24*vh,textAlign:"center"}}>Participate in this Seedling Mania and get a chance to win Exciting Prizes </Text>
+                <TouchableOpacity style={{backgroundColor :'green', width:650*vw, height:40*vh}}>
+                    <Text style={{fontFamily:"Bebas",color:"white",fontSize:40*vh,textAlign:"center"}}>Enroll Now</Text>
+                </TouchableOpacity>
 
    
                
