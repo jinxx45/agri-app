@@ -12,12 +12,23 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { AntDesign } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-community/async-storage';
 
+import { useFonts } from 'expo-font';
+
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
+
 
 
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App({navigation}) {
+
+//Loading Font 
+
+
+
+
   const [isFirslaunch, setisFirstlaunch] = React.useState(null);
 
   useEffect(() => {
@@ -32,6 +43,18 @@ export default function App({navigation}) {
    
   }, []);
 
+  const [loaded, error] = useFonts
+({ 
+   
+    Bebas : require("./assets/fonts/Bebas.ttf") ,
+    MS : require("./assets/fonts/ModernSans-Light.otf")
+});
+
+if (!loaded) {
+    return null;
+  }
+
+
   if(isFirslaunch==null)
   {
     return null;
@@ -40,30 +63,36 @@ export default function App({navigation}) {
   {
     return(
       <Onboarding
-      onSkip ={()=>navigation.navigate("Home") }
-      onDone ={()=>navigation.navigate("Home") }
+      onSkip ={()=>props.navigation.navigate("Home") }
+      onDone ={()=>props.navigation.navigate("Home") }
+      bottomBarColor ={"#0ff7d0"}
+      transitionAnimationDuration={20}
+      titleStyles ={{fontSize:40*vh,marginTop:-40*vh,color:"#d40000",fontFamily:"Bebas"}}
+      subTitleStyles ={{fontFamily:"MS",fontSize:20*vh}}
       pages={[
         {
-          backgroundColor: '#fff',
-          image: <Image source={require("./Images/favicon.png")} />,
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          backgroundColor: '#ffffff',
+          image: <Image style={{height:380*vh,width:1280*vw,marginTop:-240*vh}} source={require("./Images/OnboardingImages/farmers.jpg")} />,
+          title: 'Atmanirbhar Kisaan',
+          subtitle: 'A Initiative for the upliftment of the Economy of Farmers ',
         },
         {
-          backgroundColor: '#fff',
-          image: <Image source={require('./Images/favicon.png')} />,
-          title: 'Onboarding',
+          backgroundColor: '#ffffff',
+          image: <Image style={{height:420*vh,width:1280*vw,marginTop:-300*vh}} source={require('./Images/OnboardingImages/student.jpg')} />,
+          title: 'Awarness For Students',
           subtitle: 'Done with React Native Onboarding Swiper',
+          titleStyles: {fontSize:35*vh}
         },
         {
-          backgroundColor: '#fff',
-          image: <Image source={require('./Images/favicon.png')} />,
-          title: 'Onboarding',
+          backgroundColor: '#ffffff',
+          image: <Image style={{height:390*vh,width:1270*vw,marginTop:-270*vh}} source={require("./Images/OnboardingImages/handicrafts.jpg")} />,
+          title: 'Rebirth of Handicrafts',
           subtitle: 'Done with React Native Onboarding Swiper',
         },
       
       ]}
     />
+
 
     )
   }

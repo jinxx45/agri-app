@@ -31,13 +31,13 @@ export default function PostCard() {
             {/* User Details */}
             <View style={{flexDirection:"row", padding:"3%" ,borderBottomWidth:1,backgroundColor:"#ebeced"}}>
                 <AntDesign style={{paddingTop:"0.5%"}} name="heart" size={16} color="red" />
-                <Text style={{paddingLeft:"2%",fontSize:12*vh,fontFamily:"Ham"}}>Username </Text>
+                <Text style={{paddingLeft:"2%",fontSize:17*vh,fontFamily:"Ham"}}>Username </Text>
             </View>
 
             {/* Post Caption */}
 
             <View style={{padding:"3%"}}>
-                <Text style={{fontSize:12*vh,width:1180*vw,fontFamily:"MS"}}>Post Caption text : It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
+                <Text style={{fontSize:16*vh,width:1180*vw,fontFamily:"MS"}}>Post Caption text : It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</Text>
             </View>
 
             {/* Post Image */}

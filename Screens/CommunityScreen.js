@@ -13,6 +13,7 @@ const { vw, vh } = createViewPortConfig();
 const Stack = createStackNavigator();
 
  function CommunityScreen({navigation}) {
+  
     return (
         <View style = {{backgroundColor:"yellow" , flex : 1 , justifyContent:"center", alignItems:"center"}} >
             
@@ -20,7 +21,7 @@ const Stack = createStackNavigator();
             navigation={navigation}
             Heading = "Agricultural Helpline" 
             Content = "Get a Helpline to sell the products ,get the idea about prices of crops,sell your by products at a good rate and so on"
-            imageUri = '../Images/CommunityImages/Farmer Vector.png'
+            path = {require("../Images/OnboardingImages/farmers.jpg")}
             headingColor ="#17d1a6"
             onPressuri="Agriculture"
             />
@@ -28,7 +29,7 @@ const Stack = createStackNavigator();
             navigation={navigation}
             Heading = "Youth Helpline"
             Content = "Get a Helpline to sell the products ,get the idea about prices of crops,sell your by products at a good rate and so on"
-            imageUri ="https://lh5.googleusercontent.com/JjTpKNG30dBXkZLLmYGoKYp3yMAFokctzai0zRF2_G5q9RIuaOLXtaNTKzgbo39nybJJCCPGCGUCR-H0cvyL=w1919-h903-rw"
+            path = {require("../Images/CommunityImages/student.png")}
             headingColor="#f2461f"
             onPressuri ="Students"
             />
@@ -36,7 +37,7 @@ const Stack = createStackNavigator();
             navigation={navigation}
             Heading = "HandiCrafts Helpline"
             Content = "Get a Helpline to sell the products ,get the idea about prices of crops,sell your by products at a good rate and so on"
-            imageUri = "https://lh4.googleusercontent.com/XdNzf7SYQD7_IysGm1EkrIbzcbiyBCu5ynj3rNdIdtKfMVwNAoJMm4f5DQKguGfgYCbruyc2KtLA6AX6IR0S=w1919-h903"
+            path = {require("../Images/OnboardingImages/handicrafts.jpg")}
             headingColor = "#2ea1ff"
             onPressuri = "Handicrafts"
             />

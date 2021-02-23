@@ -33,10 +33,11 @@ export default function comm_card(props) {
             
            
             <Image
-                style={styles.cardImage}
-                source={{uri:"https://image.freepik.com/free-vector/agricultural-man-with-baskets-full-veggies_52683-22992.jpg"}}
-                style={{width: 300, height: 350}} 
-                resizeMode = "center"
+              
+                source ={props.path}
+                style={{width: 450*vw, height: 150*vh}} 
+                resizeMethod="scale"
+                resizeMode="center"
             />
             
 
@@ -44,9 +45,9 @@ export default function comm_card(props) {
             
             <View style={{borderColor:"black", borderLeftWidth:0.8,}}>
                 {/* Heading Text */}
-                <Text style ={{marginStart:"5%",marginTop:"2%",fontSize:20*vh , color:props.headingColor,fontFamily:"Bebas"}}>{props.Heading}</Text>
+                <Text style ={{marginStart:"5%",marginTop:"2%",fontSize:22*vh , color:props.headingColor,fontFamily:"Bebas"}}>{props.Heading}</Text>
                 {/* Content  */}
-                <Text style= {{marginStart:"5%",marginTop:"5%" , maxWidth:700*vw,fontSize:15*vh,fontFamily:"MS" }}>{props.Content}</Text>
+                <Text style= {{marginStart:"5%",marginTop:"5%" , maxWidth:700*vw,fontSize:17*vh,fontFamily:"MS" }}>{props.Content}</Text>
                 {/* Button */}
                 <TouchableOpacity 
                 style = {{marginTop:3*vh,padding:10*vh }}
@@ -83,11 +84,6 @@ const styles = StyleSheet.create({
         padding: 10,
         flexDirection: "row"
     },
-    cardImage : {
-        
-        height: "100%",
-        width : "35%"
-        
-    }
+   
 })
 
