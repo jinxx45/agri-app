@@ -48,14 +48,14 @@ export default function HandicraftScreen({navigation}) {
           backgroundColor: '#ffffff',
           image: <Image style={{height:420*vh,width:1280*vw,marginTop:-300*vh}} source={require('../Images/OnboardingImages/student.jpg')} />,
           title: 'Awarness For Students',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          subtitle: 'Creates Awareness , and kickstarts youngster\'s agriculture career ',
           titleStyles: {fontSize:35*vh}
         },
         {
           backgroundColor: '#ffffff',
           image: <Image style={{height:390*vh,width:1270*vw,marginTop:-270*vh}} source={require("../Images/OnboardingImages/handicrafts.jpg")} />,
           title: 'Rebirth of Handicrafts',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          subtitle: 'A platform for selling , buying quality Handicrafts ',
         },
       
       ]}

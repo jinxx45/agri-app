@@ -1,15 +1,37 @@
 import React from 'react'
 import { View, Text,TextInput ,Image,StyleSheet,TouchableOpacity,Linking} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import { useFonts } from 'expo-font';
+
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
+
+
 
 export default function LoginScreen(props) {
+
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf"),
+        Ham : require("../assets/fonts/Hamburge-Free.ttf")
+    });
+
+    
+    if (!loaded) {
+        return null;
+      }
+
     return (
         
         <ScrollView>
 
            <Image
-           style={{height:300}}
-            source={{uri:"https://images.unsplash.com/photo-1515096788709-a3cf4ce0a4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=953&q=80"}}
+           style={{height:300*vh,width:1300*vw,marginTop:-20*vh}}
+            source={require("../Images/CommunityImages/login.jpg")}
+            resizeMethod="auto"
+            resizeMode="center"
            
            />
 
@@ -31,12 +53,12 @@ export default function LoginScreen(props) {
                
                 >
                 
-                    <Text style={{paddingTop:10,  color:"white" ,alignSelf:"center"}}>
+                    <Text style={{paddingTop:10*vh,  color:"white" ,alignSelf:"center",fontFamily:"Bebas",fontSize:19*vh}}>
                         Sign In 
                     </Text>
                 </TouchableOpacity>
 
-            <Text style={{alignSelf:"center",marginTop:"4%"}}
+            <Text style={{alignSelf:"center",marginTop:"4%",fontFamily:"MS",fontSize:16*vh}}
            
             >
                 Dont Have an account ? 
@@ -54,14 +76,16 @@ export default function LoginScreen(props) {
 
 const styles = StyleSheet.create({
     textInput :{
-        height: 40,
+        height: 40*vh,
          borderColor: 'gray', 
          borderWidth: 1,
-         width:"80%",
+         width:1090*vw,
          alignSelf:"center",
          padding:"2%",
          borderRadius:15,
          marginTop:"10%",
+         fontFamily:"MS",
+         fontSize:17*vh
          
     }
 })

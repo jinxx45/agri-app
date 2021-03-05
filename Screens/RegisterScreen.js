@@ -1,7 +1,24 @@
 import React from 'react'
 import { View, Text ,ScrollView,Image,TextInput,StyleSheet ,TouchableOpacity} from 'react-native'
+import { useFonts } from 'expo-font';
+
+import {createViewPortConfig} from 'react-native-responsive-view-port';
+const { vw, vh } = createViewPortConfig();
 
 export default function RegisterScreen() {
+
+    const [loaded, error] = useFonts
+    ({ 
+       
+        Bebas : require("../assets/fonts/Bebas.ttf") ,
+        MS : require("../assets/fonts/ModernSans-Light.otf"),
+        Ham : require("../assets/fonts/Hamburge-Free.ttf")
+    });
+
+    if (!loaded) {
+        return null;
+      }
+
     return (
         <ScrollView contentContainerStyle={{ paddingBottom: "9%"}}>
 
