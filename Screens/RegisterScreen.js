@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { View, Text ,ScrollView,Image,TextInput,StyleSheet ,TouchableOpacity} from 'react-native'
 import { useFonts } from 'expo-font';
 
@@ -7,6 +7,9 @@ const { vw, vh } = createViewPortConfig();
 
 export default function RegisterScreen() {
 
+    const[email,setEmail] = useState('');
+    const[password,setPassword] = useState('');
+
     const [loaded, error] = useFonts
     ({ 
        
@@ -14,6 +17,23 @@ export default function RegisterScreen() {
         MS : require("../assets/fonts/ModernSans-Light.otf"),
         Ham : require("../assets/fonts/Hamburge-Free.ttf")
     });
+
+    function sendCred(){
+        fetch("http://10.0.2.2:3000/createUser",{
+            method :"POST",
+            headers :{
+                'Content-Type' : 'application/json'
+            },
+            body:JSON.stringify({
+                "email":email,
+                "password":password
+            })
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+        })
+    }
 
     if (!loaded) {
         return null;
@@ -30,20 +50,20 @@ export default function RegisterScreen() {
 
            {/* Text Inputs */}
            
-           <TextInput
-                style={styles.textInput}
-                placeholder="Name"
-                />
-
+          
            <TextInput
                 style={styles.textInput}
                 placeholder="Email ID"
+                value={email}
+                onChangeText={(text)=>setEmail(text)}
 
                 />
            <TextInput
                 style={styles.textInput}
                 placeholder="Password"
                 secureTextEntry={true}
+                value={password}
+                onChangeText={(text)=>setPassword(text)}
                 />
            <TextInput
                 style={styles.textInput}
@@ -53,7 +73,7 @@ export default function RegisterScreen() {
           
           <TouchableOpacity 
                 style = {{marginTop : "10%",backgroundColor :'#694fad', width:180, height:40,alignSelf:"center",borderRadius:15}}
-               
+                onPress={()=>sendCred()}
                 >
                 
                     <Text style={{paddingTop:10,  color:"white" ,alignSelf:"center"}}>
