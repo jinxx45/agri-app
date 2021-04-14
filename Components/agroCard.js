@@ -20,15 +20,18 @@ export default function agroCard(props) {
       }
     
     return (
-        <TouchableOpacity style={styles.agroCard}>
+        <TouchableOpacity style={styles.agroCard}
+        onPress={() =>props.navigation.navigate(props.onPressuri)} 
+        >
            <Image 
                 source = {props.path}
                 style={{height:114*vh,width:530*vw,marginTop:2*vh}}
                 resizeMode="center"
                 
            />
-
+            
            <Text style={{textAlign:"center",fontSize:18*vh,fontFamily:"MS",marginTop:5*vh}}>{props.title}</Text>
+           
             
         </TouchableOpacity>
     )

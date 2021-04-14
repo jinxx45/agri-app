@@ -35,9 +35,9 @@ export default function comm_card(props) {
             <Image
               
                 source ={props.path}
-                style={{width: 450*vw, height: 150*vh}} 
+                style={{width: 480*vw, height: 160*vh,marginLeft:-2}} 
                 resizeMethod="scale"
-                resizeMode="center"
+                resizeMode="stretch"
             />
             
 

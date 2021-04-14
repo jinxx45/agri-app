@@ -7,6 +7,11 @@ import HandicraftScreen from './HandicraftScreen';
 import StudentScreen from './StudentScreen';
 import AgriFormScreen from './AgriFormScreen';
 
+// Nested Agricultural Screens
+import fertilzerScreen from '../Screens/FertilizerScreen';
+import trendingMethodScreen from '../Screens/trendingMethods';
+
+
 import {createViewPortConfig} from 'react-native-responsive-view-port';
 const { vw, vh } = createViewPortConfig();
 
@@ -54,6 +59,9 @@ export default function App() {
         <Stack.Screen name="Handicrafts" component={HandicraftScreen} />
         <Stack.Screen name="Students" component={StudentScreen} />
         <Stack.Screen name="SellBy" component={AgriFormScreen} />
+        <Stack.Screen name="Fertilizer Calculator" component={fertilzerScreen} />
+        <Stack.Screen name="New Trending Methods" component={trendingMethodScreen} />
+        
 
       </Stack.Navigator>
 

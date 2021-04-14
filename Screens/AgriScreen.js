@@ -5,10 +5,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AgriCard from "../Components/agroCard"
 
 
+
 const Stack = createStackNavigator();
 
 
- export default function AgriScreen(props) {
+ export default function AgriScreen({navigation}) {
     return (
 
         <View style={{flex:1}}>
@@ -16,6 +17,9 @@ const Stack = createStackNavigator();
                 <AgriCard 
                 path = {require("../Images/AgriCard/techinques.png")}
                 title = "New Trending Methods"
+                onPressuri = "New Trending Methods"
+                navigation={navigation}
+                
                 />
                 <AgriCard
                 path = {require("../Images/AgriCard/managecrops.png")}
@@ -27,6 +31,8 @@ const Stack = createStackNavigator();
                 <AgriCard
                 path = {require("../Images/AgriCard/calculator.jpg")}
                 title ="Fertilizer Calculator"
+                navigation={navigation}
+                onPressuri="Fertilizer Calculator"
                 />
                 <AgriCard
                 path = {require("../Images/AgriCard/exchangebyproducts.png")}
@@ -54,5 +60,6 @@ const Stack = createStackNavigator();
        
             )
 }
+
 
 
